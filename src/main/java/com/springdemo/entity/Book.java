@@ -19,8 +19,7 @@ public class Book implements Serializable {
 
 	private String author;
 
-	@Autowired
-	private Category category;
+	private long categoryId;
 
 	public static long getSerialVersionUID() {
 		return serialVersionUID;
@@ -58,12 +57,12 @@ public class Book implements Serializable {
 		this.author = author;
 	}
 
-	public Category getCategory() {
-		return category;
+	public long getCategoryId() {
+		return categoryId;
 	}
 
-	public void setCategory(Category category) {
-		this.category = category;
+	public void setCategoryId(long categoryId) {
+		this.categoryId = categoryId;
 	}
 
 	@Override
@@ -73,7 +72,7 @@ public class Book implements Serializable {
 				", isbn='" + isbn + '\'' +
 				", title='" + title + '\'' +
 				", author='" + author + '\'' +
-				", category=" + category +
+				", categoryId=" + categoryId +
 				'}';
 	}
 }

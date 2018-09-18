@@ -1,8 +1,12 @@
 package com.springdemo.service.impl;
 
+import com.springdemo.dao.BookDao;
 import com.springdemo.entity.Book;
 import com.springdemo.entity.Category;
 import com.springdemo.service.BookService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -10,8 +14,25 @@ import java.util.List;
 
 @Service
 public class BookServiceImpl implements BookService {
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-	private List<Category> categories;
+	// 注入Service依赖
+	@Autowired
+	private BookDao bookDao;
+
+	@Override
+	public Book getById(long bookId) {
+		logger.info("getBookById");
+		return bookDao.getBookById(bookId);
+	}
+
+	@Override
+	public List<Book> getAllBooks() {
+		logger.info("getAllBooks");
+		return bookDao.getAllBooks(0,20);
+	}
+
+	/*private List<Category> categories;
 	private List<Book> books;
 
 	public BookServiceImpl() {
@@ -105,6 +126,6 @@ public class BookServiceImpl implements BookService {
 			}
 		}
 		return id + 1;
-	}
+	}*/
 
 }

@@ -10,7 +10,8 @@
         id,
         isbn,
         title,
-        author
+        author,
+        categoryid
         FROM
         n_book
         WHERE
@@ -22,7 +23,8 @@
         id,
         isbn,
         title,
-        author
+        author,
+        categoryid
         FROM
         n_book
         ORDER BY
