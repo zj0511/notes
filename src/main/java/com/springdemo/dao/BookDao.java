@@ -15,7 +15,7 @@ public interface BookDao {
      * @param id
      * @return
      */
-    Book getBookById(long id);
+    Book getBookById(String id);
 
     /**
      * 查询所有图书

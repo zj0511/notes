@@ -14,7 +14,7 @@ public interface CategoryDao {
      * @param id
      * @return
      */
-    Category getCategoryById(long id);
+    Category getCategoryById(String id);
 
     /**
      * 查询所有类别

@@ -1,11 +1,8 @@
 package com.springdemo.service;
 
 import com.springdemo.entity.Book;
-import com.springdemo.entity.Category;
 
 import java.util.List;
-
-;
 
 public interface BookService {
 
@@ -14,11 +11,11 @@ public interface BookService {
 	 * @param id
 	 * @return
 	 */
-	Book getById(long bookId);
+	Book getById(String bookId);
 
 	/**
 	 * 查询所有图书
 	 * @return
 	 */
-	List<Book> getAllBooks();
+	List<Book> getAllBooks(int offset, int limit);
 }

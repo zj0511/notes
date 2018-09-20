@@ -16,7 +16,7 @@ public class CategoryDaoTest extends BaseTest {
 
     @Test
     public void getCategoryById() throws Exception {
-        long categoryId = 1L;
+        String categoryId = "1";
         Category category = categoryDao.getCategoryById(categoryId);
         System.out.println(category);
     }

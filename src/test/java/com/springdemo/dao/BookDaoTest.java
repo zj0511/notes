@@ -16,7 +16,7 @@ public class BookDaoTest extends BaseTest {
 
     @Test
     public void testGetBookById() throws Exception {
-        long bookId = 1;
+        String bookId = "1";
         Book book = bookDao.getBookById(bookId);
         System.out.println(book);
     }

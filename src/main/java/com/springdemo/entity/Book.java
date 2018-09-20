@@ -11,7 +11,7 @@ public class Book implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private long id;
+	private String id;
 
 	private String isbn;
 
@@ -19,17 +19,17 @@ public class Book implements Serializable {
 
 	private String author;
 
-	private long categoryId;
+	private String categoryId;
 
 	public static long getSerialVersionUID() {
 		return serialVersionUID;
 	}
 
-	public long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
@@ -57,11 +57,11 @@ public class Book implements Serializable {
 		this.author = author;
 	}
 
-	public long getCategoryId() {
+	public String getCategoryId() {
 		return categoryId;
 	}
 
-	public void setCategoryId(long categoryId) {
+	public void setCategoryId(String categoryId) {
 		this.categoryId = categoryId;
 	}
 

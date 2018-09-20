@@ -1,31 +1,37 @@
 /*
-Navicat MySQL Data Transfer
+ Navicat Premium Data Transfer
 
-Source Server         : localhost
-Source Server Version : 50721
-Source Host           : localhost:3306
-Source Database       : notes
+ Source Server         : localhost
+ Source Server Type    : MySQL
+ Source Server Version : 50718
+ Source Host           : localhost:3306
+ Source Schema         : notes
 
-Target Server Type    : MYSQL
-Target Server Version : 50721
-File Encoding         : 65001
+ Target Server Type    : MySQL
+ Target Server Version : 50718
+ File Encoding         : 65001
 
-Date: 2018-09-17 09:39:01
+ Date: 20/09/2018 23:42:54
 */
 
-SET FOREIGN_KEY_CHECKS=0;
+SET NAMES utf8mb4;
+SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
--- Table structure for `n_category`
+-- Table structure for n_category
 -- ----------------------------
 DROP TABLE IF EXISTS `n_category`;
 CREATE TABLE `n_category` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` varchar(100) NOT NULL,
   `name` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of n_category
 -- ----------------------------
+BEGIN;
 INSERT INTO `n_category` VALUES ('1', 'Computing');
+COMMIT;
+
+SET FOREIGN_KEY_CHECKS = 1;
