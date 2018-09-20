@@ -31,11 +31,7 @@ public class BookController {
         logger.info("listBooks");
         List<Book> books = bookService.getAllBooks();
         Map map = new HashMap<String, Object>();
-        map.put("status", "200");
-        map.put("message", "获得图书列表");
-        Map map2 = new HashMap<String, Object>();
-        map2.put("books", books);
-        map.put("data", map2);
+        map.put("books", books);
         return map;
     }
 }
