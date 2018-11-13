@@ -26,7 +26,7 @@ public class BookController {
     @Autowired
     private CategoryService categoryService;
 
-    @RequestMapping(value = "/bookList", method = RequestMethod.GET, produces = {"application/json; charset=utf-8"})
+    @RequestMapping(value = "/getBookList", method = RequestMethod.POST, produces = {"application/json; charset=utf-8"})
     @ResponseBody
     @SuppressWarnings("unchecked")
     public Object listBooks() {
@@ -36,11 +36,13 @@ public class BookController {
         List<Book> booksResult = new ArrayList<>();
         for (Book item : books) {
             Category category = categoryService.getCategoryById(item.getCategoryId());
+            book.setId(item.getId());
             book.setIsbn(item.getIsbn());
             book.setTitle(item.getTitle());
             book.setAuthor(item.getAuthor());
             book.setCategoryId(category.getName());
             booksResult.add(book);
+            book = new Book();
         }
         Map map = new HashMap<String, Object>();
         map.put("books", booksResult);
