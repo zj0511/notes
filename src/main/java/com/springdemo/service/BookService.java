@@ -8,14 +8,12 @@ public interface BookService {
 
 	/**
 	 * 查询一本图书
-	 * @param id
-	 * @return
+	 * @param bookId
 	 */
-	Book getById(String bookId);
+	Book getBookById(String bookId);
 
 	/**
 	 * 查询所有图书
-	 * @return
 	 */
 	List<Book> getAllBooks(int offset, int limit);
 }

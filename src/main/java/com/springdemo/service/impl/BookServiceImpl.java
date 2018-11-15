@@ -20,7 +20,7 @@ public class BookServiceImpl implements BookService {
     private BookDao bookDao;
 
     @Override
-    public Book getById(String bookId) {
+    public Book getBookById(String bookId) {
         logger.info("getBookById");
         return bookDao.getBookById(bookId);
     }

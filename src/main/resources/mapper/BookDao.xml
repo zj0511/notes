@@ -15,7 +15,7 @@
         FROM
         n_book
         WHERE
-        id = #{bookId}
+        id = #{id}
     </select>
 
     <select id="getAllBooks" resultType="Book">
