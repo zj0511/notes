@@ -55,6 +55,7 @@
        */
       getBookList() {
         this.$axios.post('api/getBookList').then(response => {
+          console.log(response)
           if (response.status === 200) {
             this.books = response.data.books;
           }
@@ -79,8 +80,10 @@
             id: row.id
           }
         }).then(response => {
-          this.form = response.data;
-          this.dialogFormVisible = true;
+          if (response.status === 200) {
+            this.form = response.data;
+            this.dialogFormVisible = true;
+          }
         })
       }
     }
