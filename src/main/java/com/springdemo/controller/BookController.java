@@ -36,24 +36,24 @@ public class BookController {
     @SuppressWarnings("unchecked")
     public Result<List> listBooks() {
         logger.info("listBooks");
-        List<Book> books = bookService.getAllBooks(0, 10);
         Book book = new Book();
         List<Book> booksResult = new ArrayList<>();
-        for (Book item : books) {
-            Category category = categoryService.getCategoryById(item.getCategoryId());
-            book.setId(item.getId());
-            book.setIsbn(item.getIsbn());
-            book.setTitle(item.getTitle());
-            book.setAuthor(item.getAuthor());
-            book.setCategoryId(category.getName());
-            booksResult.add(book);
-            book = new Book();
+        try {
+            List<Book> books = bookService.getAllBooks(0, 10);
+            for (Book item : books) {
+                Category category = categoryService.getCategoryById(item.getCategoryId());
+                book.setId(item.getId());
+                book.setIsbn(item.getIsbn());
+                book.setTitle(item.getTitle());
+                book.setAuthor(item.getAuthor());
+                book.setCategoryId(category.getName());
+                booksResult.add(book);
+                book = new Book();
+            }
+        } catch (Exception e) {
+            return new Result<>(500,"服务异常");
         }
-        Result<List> result = new Result<>();
-        result.setData(booksResult);
-        result.setCode("200");
-        result.setMessage("获取图书列表成功");
-        return result;
+        return new Result<List>().data(booksResult);
     }
 
     /**

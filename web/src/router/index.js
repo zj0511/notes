@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import bookList from '@/views/books/booklist'
+import home from '@/views/home'
 
 Vue.use(Router)
 
@@ -8,8 +8,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: '图书列表',
-      component: bookList
+      name: '首页',
+      component: home
     }
   ]
 })
