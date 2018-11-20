@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class RoleController {
 
-    private static final Log logger = LogFactory.getLog(BookController.class);
+    private static final Log logger = LogFactory.getLog(RoleController.class);
 
     @Autowired
     private RoleService roleService;
