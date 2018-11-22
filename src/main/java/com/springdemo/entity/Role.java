@@ -6,14 +6,6 @@ public class Role implements Serializable {
 
     private String id;
 
-    private int energy;
-
-    private int money;
-
-    private int diamond;
-
-    private int star;
-
     private int level;
 
     private int vip;
@@ -30,38 +22,6 @@ public class Role implements Serializable {
 
     public void setId(String id) {
         this.id = id;
-    }
-
-    public int getEnergy() {
-        return energy;
-    }
-
-    public void setEnergy(int energy) {
-        this.energy = energy;
-    }
-
-    public int getMoney() {
-        return money;
-    }
-
-    public void setMoney(int money) {
-        this.money = money;
-    }
-
-    public int getDiamond() {
-        return diamond;
-    }
-
-    public void setDiamond(int diamond) {
-        this.diamond = diamond;
-    }
-
-    public int getStar() {
-        return star;
-    }
-
-    public void setStar(int star) {
-        this.star = star;
     }
 
     public int getLevel() {
@@ -108,10 +68,6 @@ public class Role implements Serializable {
     public String toString() {
         return "Role{" +
                 "id='" + id + '\'' +
-                ", energy=" + energy +
-                ", money=" + money +
-                ", diamond=" + diamond +
-                ", star=" + star +
                 ", level=" + level +
                 ", vip=" + vip +
                 ", clothingId='" + clothingId + '\'' +
