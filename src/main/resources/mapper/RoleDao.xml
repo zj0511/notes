@@ -7,10 +7,7 @@
         <!-- 具体的sql -->
         SELECT
         id,
-        energy,
-        money,
-        diamond,
-        star,
+        nickname,
         level,
         vip,
         clothingid,

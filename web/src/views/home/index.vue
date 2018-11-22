@@ -7,6 +7,7 @@
     <el-button type="text" class="avatar" @click="openInfo">
       <div class="vip">V{{info.vip}}</div>
       <div class="level">{{info.level}}</div>
+      <div class="nickname">{{info.nickname}}111111</div>
     </el-button>
 
     <!--右边栏按钮-->
@@ -47,10 +48,7 @@
     data() {
       return {
         info: {
-          energy: 0,
-          money: 0,
-          diamond: 0,
-          star: 0,
+          nickname: '',
           level: 0,
           vip: 0,
           clothingId: '',
@@ -144,15 +142,24 @@
   .vip {
     position: relative;
     left: 22px;
-    top: -26px;
+    top: -19px;
     color: #ffffff;
   }
 
   .level {
     position: relative;
     left: 17px;
-    top: 4px;
+    top: 11px;
     color: #000000;
+  }
+
+  .nickname {
+    position: relative;
+    width: 100px;
+    left: 9px;
+    top: 25px;
+    color:  #ffffff;
+
   }
 
   .info-right {

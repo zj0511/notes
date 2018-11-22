@@ -6,6 +6,8 @@ public class Role implements Serializable {
 
     private String id;
 
+    private String nickname;
+
     private int level;
 
     private int vip;
@@ -22,6 +24,14 @@ public class Role implements Serializable {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 
     public int getLevel() {

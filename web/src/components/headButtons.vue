@@ -61,15 +61,15 @@
 </style>
 <style>
   .energy {
-    background: url('/static/img/button/energy.png') no-repeat;
+    background: url('/static/img/button/head/energy.png') no-repeat;
   }
 
   .money {
-    background: url('/static/img/button/money.png') no-repeat;
+    background: url('/static/img/button/head/money.png') no-repeat;
   }
 
   .diamond {
-    background: url('/static/img/button/diamond.png') no-repeat;
+    background: url('/static/img/button/head/diamond.png') no-repeat;
   }
 
   .energy.el-button--text > span, .money.el-button--text > span, .diamond.el-button--text > span {
