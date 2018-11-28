@@ -9,6 +9,7 @@
         id,
         nickname,
         level,
+        exper,
         vip,
         clothingid,
         friendid,

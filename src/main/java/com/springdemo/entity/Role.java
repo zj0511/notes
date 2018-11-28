@@ -10,6 +10,8 @@ public class Role implements Serializable {
 
     private int level;
 
+    private int exper;
+
     private int vip;
 
     private String clothingId;
@@ -40,6 +42,14 @@ public class Role implements Serializable {
 
     public void setLevel(int level) {
         this.level = level;
+    }
+
+    public int getExper() {
+        return exper;
+    }
+
+    public void setExper(int exper) {
+        this.exper = exper;
     }
 
     public int getVip() {
