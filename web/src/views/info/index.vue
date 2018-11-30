@@ -20,16 +20,18 @@
         <div>
           <el-button type="text" class="edit" @click="openEdit"></el-button>
         </div>
+        <vue-chart type="doughnut" :data="chartData"></vue-chart>
       </div>
     </div>
   </div>
 </template>
 <script>
   import headButtons from '@/components/headButtons'
+  import VueChart from 'vue-chart-js'
 
   export default {
     name: 'info',
-    components: {headButtons},
+    components: {headButtons, VueChart},
     data() {
       return {
         info: {
@@ -40,6 +42,19 @@
           clothingId: '',
           friendId: '',
           taskId: ''
+        },
+        chartData: {
+          labels: ['Item 1', 'Item 2', 'Item 3'],
+          datasets: [
+            {
+              label: 'Component 1',
+              data: [10, 20, 30]
+            },
+            {
+              label: 'Component 2',
+              data: [20, 30, 40]
+            }
+          ]
         }
       }
     },
