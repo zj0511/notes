@@ -48,11 +48,8 @@
           datasets: [
             {
               label: 'Component 1',
+              backgroundColor: '#f87979',
               data: [10, 20, 30]
-            },
-            {
-              label: 'Component 2',
-              data: [20, 30, 40]
             }
           ]
         }
