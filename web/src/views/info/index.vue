@@ -15,23 +15,25 @@
           <div class="vip-font">V{{info.vip}}</div>
         </el-button>
         <div class="level">{{info.level}}</div>
-        <div class="exper">{{info.exper}}/30</div>
+        <div class="exper">{{info.exper}}/{{experMax}}</div>
         <div class="nickname">{{info.nickname}}</div>
-        <div>
-          <el-button type="text" class="edit" @click="openEdit"></el-button>
+        <el-button type="text" class="edit" @click="openEdit"></el-button>
+        <div class="avatar-main">
+          <css-circle color="#ff767e" width=150 font-size=48 :pv="pv" bold=8 text-bg-color='#f0f0f0'
+                      class="avatar-circle" ref="myCircle"></css-circle>
+          <img :src="imageUrl" class="avatar-img">
         </div>
-        <vue-chart type="doughnut" :data="chartData"></vue-chart>
       </div>
     </div>
   </div>
 </template>
 <script>
   import headButtons from '@/components/headButtons'
-  import VueChart from 'vue-chart-js'
+  import CssCircle from '@/components/circle'
 
   export default {
     name: 'info',
-    components: {headButtons, VueChart},
+    components: {headButtons, CssCircle},
     data() {
       return {
         info: {
@@ -43,16 +45,10 @@
           friendId: '',
           taskId: ''
         },
-        chartData: {
-          labels: ['Item 1', 'Item 2', 'Item 3'],
-          datasets: [
-            {
-              label: 'Component 1',
-              backgroundColor: '#f87979',
-              data: [10, 20, 30]
-            }
-          ]
-        }
+        imageUrl: '/static/img/button/info/init.png',
+        experMax: 0,
+        pv: 0,
+        myCircle: ''
       }
     },
     created() {
@@ -85,6 +81,9 @@
         }).then(response => {
           if (response.status === 200) {
             this.info = response.data.data;
+            this.experMax = 100 * this.info.level;
+            this.pv = ~~(this.info.exper / this.experMax * 100);
+            this.$refs.myCircle.setPv(this.pv);  // 调用子组件myCirlce的setPv方法
           }
         })
       },
@@ -195,5 +194,18 @@
     float: right;
     top: 85px;
     right: 50px;
+  }
+
+  .avatar-circle {
+    top: -63px;
+    left: 54px;
+    border-width: 0 !important;
+  }
+
+  .avatar-img {
+    top: -209px;
+    position: relative;
+    z-index: 999;
+    right: 61px;
   }
 </style>
