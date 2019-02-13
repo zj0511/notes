@@ -22,9 +22,8 @@ public class AssetsController {
 
     @RequestMapping(value = "getAssets", method = RequestMethod.POST)
     @ResponseBody
-    @SuppressWarnings("unchecked")
-    public Result<Assets> getAssetsById(@RequestParam String id) {
+    public Result getAssetsById(@RequestParam String id) {
         logger.info("getAssetsById");
-        return new Result<Assets>().data(assetsService.getAssetsById(id));
+        return Result.ok("获取成功", assetsService.getAssetsById(id));
     }
 }

@@ -20,9 +20,7 @@ public class MenuController {
 
     @RequestMapping(value = "/getMenus", method = RequestMethod.POST)
     @ResponseBody
-    @SuppressWarnings("unchecked")
-    public Result<List> getAllMenus(@RequestParam int offset, @RequestParam int limit) {
-        return new Result<List>().data(menuService.getAllMenus(offset, limit));
-
+    public Result getAllMenus(@RequestParam int offset, @RequestParam int limit) {
+        return Result.ok("获取成功", menuService.getAllMenus(offset, limit));
     }
 }

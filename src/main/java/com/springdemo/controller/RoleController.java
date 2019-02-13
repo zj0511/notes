@@ -22,9 +22,9 @@ public class RoleController {
 
     @RequestMapping(value = "getRole", method = RequestMethod.POST)
     @ResponseBody
-    @SuppressWarnings("unchecked")
-    public Result<Role> getRoleById(@RequestParam String id) {
+    public Result getRoleById(@RequestParam String id) {
         logger.info("getRoleById");
-        return new Result<Role>().data(roleService.getRoleById(id));
+        return Result.ok("获取成功", roleService.getRoleById(id));
     }
+
 }

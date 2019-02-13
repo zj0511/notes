@@ -3,31 +3,66 @@ package com.springdemo.dto;
 /**
  * 封装json对象，所有返回结果都使用它
  */
-public class Result<T> extends BaseResponse {
+public class Result  {
 
-    private T data;// 成功时返回的数据
+    private Integer status;
+    private String msg;
+    private Object obj;
 
-    public Result() {
+    private Result() {
     }
 
-    public Result(int status, String message) {
-        super(status,message);
+    public static Result build() {
+        return new Result();
     }
 
-    public Result data(T data) {
-        this.setData(data);
+    public static Result ok(String msg, Object obj) {
+        return new Result(200, msg, obj);
+    }
+
+    public static Result ok(String msg) {
+        return new Result(200, msg, null);
+    }
+
+    public static Result error(String msg, Object obj) {
+        return new Result(500, msg, obj);
+    }
+
+    public static Result error(String msg) {
+        return new Result(500, msg, null);
+    }
+
+    private Result(Integer status, String msg, Object obj) {
+        this.status = status;
+        this.msg = msg;
+        this.obj = obj;
+    }
+
+    public Integer getStatus() {
+
+        return status;
+    }
+
+    public Result setStatus(Integer status) {
+        this.status = status;
         return this;
     }
 
-    public Result(T data) {
-        this.data = data;
+    public String getMsg() {
+        return msg;
     }
 
-    public T getData() {
-        return data;
+    public Result setMsg(String msg) {
+        this.msg = msg;
+        return this;
     }
 
-    public void setData(T data) {
-        this.data = data;
+    public Object getObj() {
+        return obj;
+    }
+
+    public Result setObj(Object obj) {
+        this.obj = obj;
+        return this;
     }
 }

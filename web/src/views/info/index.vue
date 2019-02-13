@@ -86,7 +86,7 @@
             this.$refs.myCircle.setPv(this.pv);  // 调用子组件myCirlce的setPv方法
           }
         })
-      },
+      }
     }
   }
 </script>
