@@ -2,7 +2,7 @@ package com.springdemo.entity;
 
 import java.io.Serializable;
 
-public class Role implements Serializable {
+public class User implements Serializable {
 
     private String id;
 
@@ -19,6 +19,10 @@ public class Role implements Serializable {
     private String friendId;
 
     private String taskId;
+
+    private String username;
+
+    private String password;
 
     public String getId() {
         return id;
@@ -84,15 +88,19 @@ public class Role implements Serializable {
         this.taskId = taskId;
     }
 
-    @Override
-    public String toString() {
-        return "Role{" +
-                "id='" + id + '\'' +
-                ", level=" + level +
-                ", vip=" + vip +
-                ", clothingId='" + clothingId + '\'' +
-                ", friendId='" + friendId + '\'' +
-                ", taskId='" + taskId + '\'' +
-                '}';
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

@@ -1,19 +1,19 @@
 package com.springdemo.dao;
 
 import com.springdemo.BaseTest;
-import com.springdemo.entity.Role;
+import com.springdemo.entity.User;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class RoleDaoTest extends BaseTest {
+public class UserDaoTest extends BaseTest {
 
     @Autowired
-    private RoleDao roleDao;
+    private UserDao userDao;
 
     @Test
     public void getRoleById() throws Exception {
-        String roleId = "1";
-        Role role = roleDao.getRoleById(roleId);
-        System.out.println(role);
+        String userId = "1";
+        User user = userDao.getUserById(userId);
+        System.out.println(user);
     }
 }

@@ -1,8 +1,7 @@
 package com.springdemo.controller;
 
 import com.springdemo.dto.Result;
-import com.springdemo.entity.Role;
-import com.springdemo.service.RoleService;
+import com.springdemo.service.UserService;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,13 +17,13 @@ public class RoleController {
     private static final Log logger = LogFactory.getLog(RoleController.class);
 
     @Autowired
-    private RoleService roleService;
+    private UserService userService;
 
     @RequestMapping(value = "getRole", method = RequestMethod.POST)
     @ResponseBody
     public Result getRoleById(@RequestParam String id) {
         logger.info("getRoleById");
-        return Result.ok("获取成功", roleService.getRoleById(id));
+        return Result.ok("获取成功", userService.getUserById(id));
     }
 
 }
